@@ -12,7 +12,7 @@ let player = {
  
 }
 
-let tool = ["Teeth", "Safe Scissors", "Scissors", "Exactpo", "Snipper", "Weedwacker", "Shears", "Katana", "Lawn-Saber", "Attack Chopper", "Mow-Ops Team", "Nukes"
+let tool = ["Teeth", "Metal Teeth", "Pluck", "Sticks", "Safe Scissors", "Scissors", "Exacto", "Tiny Sword", "Snipper", "Weedwacker", "Shears", "Katana", "Lawn-Saber", "Attack Chopper", "Mow-Ops Team", "Nukes"
 , "Planet Buster"]
 
 let power = player.powerLevel 
@@ -21,7 +21,7 @@ let equipped ="Teeth"
 //FIX WEAPON SELECTION
 function upgradeTool() {
   
-     if (cash >= 10) {
+     if (cash >= 10 && upgrade < (tool.length-1)) {
         cash = cash - 10
         power = power + 1
         upgrade = upgrade +1
@@ -32,12 +32,15 @@ function upgradeTool() {
         document.getElementById("highScore").innerHTML = highScore;
         document.getElementById("power").innerHTML = power;
         document.getElementById("equipped").innerHTML = equipped;
-     
     }
-
-     else  alert("You are too broke!"); 
+    else if (upgrade >= (tool.length-1))  {
+       
+        document.getElementById("equipped").innerHTML = "Planet Buster";}
+    else {
+    alert("EDGECASE for UPGRADE")
+    }
+    
 }
-
 
 function onClick() { //Called only when MOW BUTTON is pressed
    
