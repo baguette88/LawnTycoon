@@ -37,7 +37,7 @@ function upgradeTool() {
        
         document.getElementById("equipped").innerHTML = "Planet Buster";}
     else {
-    alert("EDGECASE for UPGRADE")
+    alert("You are too broke!")
     }
     
 }
